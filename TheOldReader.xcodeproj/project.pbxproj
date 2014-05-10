@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3DCE8284191E5C20004DE45C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE8283191E5C20004DE45C /* Foundation.framework */; };
-		3DCE8289191E5C20004DE45C /* TheOldReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3DCE8288191E5C20004DE45C /* TheOldReader.h */; };
-		3DCE828B191E5C20004DE45C /* TheOldReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE828A191E5C20004DE45C /* TheOldReader.m */; };
 		3DCE8292191E5C20004DE45C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE8291191E5C20004DE45C /* XCTest.framework */; };
 		3DCE8293191E5C20004DE45C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE8283191E5C20004DE45C /* Foundation.framework */; };
 		3DCE8295191E5C20004DE45C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE8294191E5C20004DE45C /* UIKit.framework */; };
@@ -35,7 +33,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				3DCE8289191E5C20004DE45C /* TheOldReader.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,8 +42,6 @@
 		3DCE8280191E5C20004DE45C /* libTheOldReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTheOldReader.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DCE8283191E5C20004DE45C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3DCE8287191E5C20004DE45C /* TheOldReader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheOldReader-Prefix.pch"; sourceTree = "<group>"; };
-		3DCE8288191E5C20004DE45C /* TheOldReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheOldReader.h; sourceTree = "<group>"; };
-		3DCE828A191E5C20004DE45C /* TheOldReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheOldReader.m; sourceTree = "<group>"; };
 		3DCE8290191E5C20004DE45C /* TheOldReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheOldReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DCE8291191E5C20004DE45C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3DCE8294191E5C20004DE45C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -110,8 +105,6 @@
 		3DCE8285191E5C20004DE45C /* TheOldReader */ = {
 			isa = PBXGroup;
 			children = (
-				3DCE8288191E5C20004DE45C /* TheOldReader.h */,
-				3DCE828A191E5C20004DE45C /* TheOldReader.m */,
 				3DCE8286191E5C20004DE45C /* Supporting Files */,
 			);
 			path = TheOldReader;
@@ -224,7 +217,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DCE828B191E5C20004DE45C /* TheOldReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
