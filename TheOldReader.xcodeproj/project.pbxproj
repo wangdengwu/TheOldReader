@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3DCE8284191E5C20004DE45C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE8283191E5C20004DE45C /* Foundation.framework */; };
+		3DCE8289191E5C20004DE45C /* TheOldReader.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3DCE8288191E5C20004DE45C /* TheOldReader.h */; };
+		3DCE828B191E5C20004DE45C /* TheOldReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE828A191E5C20004DE45C /* TheOldReader.m */; };
+		3DCE8292191E5C20004DE45C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE8291191E5C20004DE45C /* XCTest.framework */; };
+		3DCE8293191E5C20004DE45C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE8283191E5C20004DE45C /* Foundation.framework */; };
+		3DCE8295191E5C20004DE45C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE8294191E5C20004DE45C /* UIKit.framework */; };
+		3DCE8298191E5C20004DE45C /* libTheOldReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE8280191E5C20004DE45C /* libTheOldReader.a */; };
+		3DCE829E191E5C20004DE45C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DCE829C191E5C20004DE45C /* InfoPlist.strings */; };
+		3DCE82A0191E5C20004DE45C /* TheOldReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE829F191E5C20004DE45C /* TheOldReaderTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3DCE8296191E5C20004DE45C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DCE8278191E5C20004DE45C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DCE827F191E5C20004DE45C;
+			remoteInfo = TheOldReader;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3DCE827E191E5C20004DE45C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				3DCE8289191E5C20004DE45C /* TheOldReader.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3DCE8280191E5C20004DE45C /* libTheOldReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTheOldReader.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DCE8283191E5C20004DE45C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3DCE8287191E5C20004DE45C /* TheOldReader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheOldReader-Prefix.pch"; sourceTree = "<group>"; };
+		3DCE8288191E5C20004DE45C /* TheOldReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TheOldReader.h; sourceTree = "<group>"; };
+		3DCE828A191E5C20004DE45C /* TheOldReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheOldReader.m; sourceTree = "<group>"; };
+		3DCE8290191E5C20004DE45C /* TheOldReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheOldReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DCE8291191E5C20004DE45C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3DCE8294191E5C20004DE45C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		3DCE829B191E5C20004DE45C /* TheOldReaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TheOldReaderTests-Info.plist"; sourceTree = "<group>"; };
+		3DCE829D191E5C20004DE45C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3DCE829F191E5C20004DE45C /* TheOldReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheOldReaderTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3DCE827D191E5C20004DE45C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DCE8284191E5C20004DE45C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DCE828D191E5C20004DE45C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DCE8292191E5C20004DE45C /* XCTest.framework in Frameworks */,
+				3DCE8295191E5C20004DE45C /* UIKit.framework in Frameworks */,
+				3DCE8298191E5C20004DE45C /* libTheOldReader.a in Frameworks */,
+				3DCE8293191E5C20004DE45C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DCE8277191E5C20004DE45C = {
+			isa = PBXGroup;
+			children = (
+				3DCE8285191E5C20004DE45C /* TheOldReader */,
+				3DCE8299191E5C20004DE45C /* TheOldReaderTests */,
+				3DCE8282191E5C20004DE45C /* Frameworks */,
+				3DCE8281191E5C20004DE45C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DCE8281191E5C20004DE45C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DCE8280191E5C20004DE45C /* libTheOldReader.a */,
+				3DCE8290191E5C20004DE45C /* TheOldReaderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DCE8282191E5C20004DE45C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCE8283191E5C20004DE45C /* Foundation.framework */,
+				3DCE8291191E5C20004DE45C /* XCTest.framework */,
+				3DCE8294191E5C20004DE45C /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DCE8285191E5C20004DE45C /* TheOldReader */ = {
+			isa = PBXGroup;
+			children = (
+				3DCE8288191E5C20004DE45C /* TheOldReader.h */,
+				3DCE828A191E5C20004DE45C /* TheOldReader.m */,
+				3DCE8286191E5C20004DE45C /* Supporting Files */,
+			);
+			path = TheOldReader;
+			sourceTree = "<group>";
+		};
+		3DCE8286191E5C20004DE45C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DCE8287191E5C20004DE45C /* TheOldReader-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3DCE8299191E5C20004DE45C /* TheOldReaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				3DCE829F191E5C20004DE45C /* TheOldReaderTests.m */,
+				3DCE829A191E5C20004DE45C /* Supporting Files */,
+			);
+			path = TheOldReaderTests;
+			sourceTree = "<group>";
+		};
+		3DCE829A191E5C20004DE45C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DCE829B191E5C20004DE45C /* TheOldReaderTests-Info.plist */,
+				3DCE829C191E5C20004DE45C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3DCE827F191E5C20004DE45C /* TheOldReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DCE82A3191E5C20004DE45C /* Build configuration list for PBXNativeTarget "TheOldReader" */;
+			buildPhases = (
+				3DCE827C191E5C20004DE45C /* Sources */,
+				3DCE827D191E5C20004DE45C /* Frameworks */,
+				3DCE827E191E5C20004DE45C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TheOldReader;
+			productName = TheOldReader;
+			productReference = 3DCE8280191E5C20004DE45C /* libTheOldReader.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		3DCE828F191E5C20004DE45C /* TheOldReaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DCE82A6191E5C20004DE45C /* Build configuration list for PBXNativeTarget "TheOldReaderTests" */;
+			buildPhases = (
+				3DCE828C191E5C20004DE45C /* Sources */,
+				3DCE828D191E5C20004DE45C /* Frameworks */,
+				3DCE828E191E5C20004DE45C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DCE8297191E5C20004DE45C /* PBXTargetDependency */,
+			);
+			name = TheOldReaderTests;
+			productName = TheOldReaderTests;
+			productReference = 3DCE8290191E5C20004DE45C /* TheOldReaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3DCE8278191E5C20004DE45C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Cube;
+			};
+			buildConfigurationList = 3DCE827B191E5C20004DE45C /* Build configuration list for PBXProject "TheOldReader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3DCE8277191E5C20004DE45C;
+			productRefGroup = 3DCE8281191E5C20004DE45C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3DCE827F191E5C20004DE45C /* TheOldReader */,
+				3DCE828F191E5C20004DE45C /* TheOldReaderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3DCE828E191E5C20004DE45C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DCE829E191E5C20004DE45C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3DCE827C191E5C20004DE45C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DCE828B191E5C20004DE45C /* TheOldReader.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DCE828C191E5C20004DE45C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DCE82A0191E5C20004DE45C /* TheOldReaderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3DCE8297191E5C20004DE45C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DCE827F191E5C20004DE45C /* TheOldReader */;
+			targetProxy = 3DCE8296191E5C20004DE45C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3DCE829C191E5C20004DE45C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DCE829D191E5C20004DE45C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3DCE82A1191E5C20004DE45C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3DCE82A2191E5C20004DE45C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3DCE82A4191E5C20004DE45C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/TheOldReader.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TheOldReader/TheOldReader-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3DCE82A5191E5C20004DE45C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/TheOldReader.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TheOldReader/TheOldReader-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3DCE82A7191E5C20004DE45C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TheOldReader/TheOldReader-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TheOldReaderTests/TheOldReaderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3DCE82A8191E5C20004DE45C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TheOldReader/TheOldReader-Prefix.pch";
+				INFOPLIST_FILE = "TheOldReaderTests/TheOldReaderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3DCE827B191E5C20004DE45C /* Build configuration list for PBXProject "TheOldReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DCE82A1191E5C20004DE45C /* Debug */,
+				3DCE82A2191E5C20004DE45C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DCE82A3191E5C20004DE45C /* Build configuration list for PBXNativeTarget "TheOldReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DCE82A4191E5C20004DE45C /* Debug */,
+				3DCE82A5191E5C20004DE45C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3DCE82A6191E5C20004DE45C /* Build configuration list for PBXNativeTarget "TheOldReaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DCE82A7191E5C20004DE45C /* Debug */,
+				3DCE82A8191E5C20004DE45C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3DCE8278191E5C20004DE45C /* Project object */;
+}
