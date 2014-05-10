@@ -10,6 +10,6 @@
 
 @interface TheOldReaderAPI : NSObject
 
--(void)doLogin:(NSString*)userName password:(NSString*)password callback:(CallBackBlock)callback;
+-(void)doLogin:(NSString*)userName password:(NSString*)password callback:(LoginCallBackBlock)callback;
 
 @end

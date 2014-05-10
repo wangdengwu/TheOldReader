@@ -7,8 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "TheOldReaderAPI.h"
 
-@interface TheOldReaderTests : XCTestCase
+@interface TheOldReaderTests : XCTestCase{
+    TheOldReaderAPI * api;
+}
 
 @end
 
@@ -17,7 +20,7 @@
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    api=[[TheOldReaderAPI alloc]init];
 }
 
 - (void)tearDown
@@ -26,9 +29,16 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testLogin
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    __block BOOL yes;
+    __block NSString *test;
+    [api doLogin:@"dengwu.wang@gmail.com" password:@"qwer123" callback:^(BOOL isSucess, NSString *authToken) {
+        yes=isSucess;
+        test=authToken;
+    }];
+    NSLog(@"%@",yes?@"YES":@"NO");
+    NSLog(@"%@",test);
 }
 
 @end

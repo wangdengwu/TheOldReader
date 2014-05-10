@@ -7,10 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D6A508C191E9315009583F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6A508A191E92F8009583F1 /* UIKit.framework */; };
+		3D6A508E191E937B009583F1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6A508D191E937B009583F1 /* QuartzCore.framework */; };
+		3D6A5090191E93C7009583F1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6A508F191E93C7009583F1 /* CoreGraphics.framework */; };
+		3D6A5092191E94B8009583F1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6A5091191E94B8009583F1 /* SystemConfiguration.framework */; };
+		3D6A5098191E9568009583F1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6A5097191E9568009583F1 /* MobileCoreServices.framework */; };
+		3D6A509A191E9575009583F1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6A5099191E9575009583F1 /* CFNetwork.framework */; };
+		3D6A509B191E9590009583F1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6A5095191E9556009583F1 /* libz.dylib */; };
+		3D6A509E191E9E35009583F1 /* OpenAPI.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3DCE82AB191E6A05004DE45C /* OpenAPI.plist */; };
+		3D6A509F191E9E99009583F1 /* OpenAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DCE82AB191E6A05004DE45C /* OpenAPI.plist */; };
 		3DCE8284191E5C20004DE45C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE8283191E5C20004DE45C /* Foundation.framework */; };
 		3DCE8292191E5C20004DE45C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE8291191E5C20004DE45C /* XCTest.framework */; };
 		3DCE8293191E5C20004DE45C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE8283191E5C20004DE45C /* Foundation.framework */; };
-		3DCE8295191E5C20004DE45C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE8294191E5C20004DE45C /* UIKit.framework */; };
 		3DCE8298191E5C20004DE45C /* libTheOldReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE8280191E5C20004DE45C /* libTheOldReader.a */; };
 		3DCE829E191E5C20004DE45C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DCE829C191E5C20004DE45C /* InfoPlist.strings */; };
 		3DCE82A0191E5C20004DE45C /* TheOldReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE829F191E5C20004DE45C /* TheOldReaderTests.m */; };
@@ -36,6 +44,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				3D6A509E191E9E35009583F1 /* OpenAPI.plist in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,12 +52,19 @@
 
 /* Begin PBXFileReference section */
 		23407BF638EA45ED83D75AB1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		3D6A508A191E92F8009583F1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3D6A508D191E937B009583F1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3D6A508F191E93C7009583F1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3D6A5091191E94B8009583F1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3D6A5093191E9517009583F1 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		3D6A5095191E9556009583F1 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		3D6A5097191E9568009583F1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		3D6A5099191E9575009583F1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		3DCE8280191E5C20004DE45C /* libTheOldReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTheOldReader.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DCE8283191E5C20004DE45C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3DCE8287191E5C20004DE45C /* TheOldReader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheOldReader-Prefix.pch"; sourceTree = "<group>"; };
 		3DCE8290191E5C20004DE45C /* TheOldReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheOldReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DCE8291191E5C20004DE45C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		3DCE8294191E5C20004DE45C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		3DCE829B191E5C20004DE45C /* TheOldReaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TheOldReaderTests-Info.plist"; sourceTree = "<group>"; };
 		3DCE829D191E5C20004DE45C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3DCE829F191E5C20004DE45C /* TheOldReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheOldReaderTests.m; sourceTree = "<group>"; };
@@ -74,8 +90,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D6A509B191E9590009583F1 /* libz.dylib in Frameworks */,
+				3D6A509A191E9575009583F1 /* CFNetwork.framework in Frameworks */,
+				3D6A5098191E9568009583F1 /* MobileCoreServices.framework in Frameworks */,
+				3D6A5092191E94B8009583F1 /* SystemConfiguration.framework in Frameworks */,
+				3D6A5090191E93C7009583F1 /* CoreGraphics.framework in Frameworks */,
+				3D6A508E191E937B009583F1 /* QuartzCore.framework in Frameworks */,
+				3D6A508C191E9315009583F1 /* UIKit.framework in Frameworks */,
 				3DCE8292191E5C20004DE45C /* XCTest.framework in Frameworks */,
-				3DCE8295191E5C20004DE45C /* UIKit.framework in Frameworks */,
 				3DCE8298191E5C20004DE45C /* libTheOldReader.a in Frameworks */,
 				3DCE8293191E5C20004DE45C /* Foundation.framework in Frameworks */,
 			);
@@ -107,9 +129,16 @@
 		3DCE8282191E5C20004DE45C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3D6A5099191E9575009583F1 /* CFNetwork.framework */,
+				3D6A5097191E9568009583F1 /* MobileCoreServices.framework */,
+				3D6A5095191E9556009583F1 /* libz.dylib */,
+				3D6A5093191E9517009583F1 /* libz.1.2.5.dylib */,
+				3D6A5091191E94B8009583F1 /* SystemConfiguration.framework */,
+				3D6A508F191E93C7009583F1 /* CoreGraphics.framework */,
+				3D6A508D191E937B009583F1 /* QuartzCore.framework */,
+				3D6A508A191E92F8009583F1 /* UIKit.framework */,
 				3DCE8283191E5C20004DE45C /* Foundation.framework */,
 				3DCE8291191E5C20004DE45C /* XCTest.framework */,
-				3DCE8294191E5C20004DE45C /* UIKit.framework */,
 				5FD42ACFF5214984A9F851DC /* libPods.a */,
 			);
 			name = Frameworks;
@@ -242,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D6A509F191E9E99009583F1 /* OpenAPI.plist in Resources */,
 				3DCE829E191E5C20004DE45C /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +426,7 @@
 				DSTROOT = /tmp/TheOldReader.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TheOldReader/TheOldReader-Prefix.pch";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -429,7 +460,18 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				INFOPLIST_FILE = "TheOldReaderTests/TheOldReaderTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				MACH_O_TYPE = mh_bundle;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
+				PRELINK_LIBS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -445,7 +487,13 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TheOldReader/TheOldReader-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "TheOldReaderTests/TheOldReaderTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				MACH_O_TYPE = mh_bundle;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
