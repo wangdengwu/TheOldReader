@@ -59,7 +59,11 @@
         userInfo.userName=[info objectForKey:@"userName"];
         userInfo.userProfileId=[info objectForKey:@"userProfileId"];
         userInfo.isMultiLoginEnabled=[[info objectForKey:@"isMultiLoginEnabled"]boolValue];
-        callback(YES,userInfo);//需要copy
+        if (error) {
+            callback(NO,nil);
+        }else{
+            callback(YES,userInfo);//需要copy
+        }
     }];
     
     [request setFailedBlock:^{
