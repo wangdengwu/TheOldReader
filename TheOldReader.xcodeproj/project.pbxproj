@@ -14,6 +14,7 @@
 		3D6A5098191E9568009583F1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6A5097191E9568009583F1 /* MobileCoreServices.framework */; };
 		3D6A509A191E9575009583F1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6A5099191E9575009583F1 /* CFNetwork.framework */; };
 		3D6A509B191E9590009583F1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6A5095191E9556009583F1 /* libz.dylib */; };
+		3D823FDA191F3C7E0070EED2 /* OpenAPI.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3DC92A83191F06F8009BA7FF /* OpenAPI.plist */; };
 		3DC92A86191F0B63009BA7FF /* OpenAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC92A83191F06F8009BA7FF /* OpenAPI.plist */; };
 		3DC92A8A191F233C009BA7FF /* TORUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC92A89191F233C009BA7FF /* TORUserInfo.m */; };
 		3DCE8284191E5C20004DE45C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE8283191E5C20004DE45C /* Foundation.framework */; };
@@ -44,6 +45,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				3D823FDA191F3C7E0070EED2 /* OpenAPI.plist in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
