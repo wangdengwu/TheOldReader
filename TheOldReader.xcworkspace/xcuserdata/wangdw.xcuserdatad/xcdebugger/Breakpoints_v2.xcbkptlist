@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TheOldReaderTests/TheOldReaderTests.m"
-            timestampString = "421436246.41908"
+            timestampString = "421464598.025604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "-testLogin"
             landmarkType = "5">
             <Locations>
@@ -25,12 +25,12 @@
                   symbolName = "-[TheOldReaderTests testLogin]"
                   moduleName = "TheOldReaderTests"
                   urlString = "file:///Users/wangdw/work/TheOldReader/TheOldReaderTests/TheOldReaderTests.m"
-                  timestampString = "421435118.853105"
+                  timestampString = "421464598.760049"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
                   endingLineNumber = "34"
-                  offsetFromSymbolStart = "45">
+                  offsetFromSymbolStart = "51">
                </Location>
                <Location
                   shouldBeEnabled = "No"
@@ -39,12 +39,12 @@
                   symbolName = "__30-[TheOldReaderTests testLogin]_block_invoke"
                   moduleName = "TheOldReaderTests"
                   urlString = "file:///Users/wangdw/work/TheOldReader/TheOldReaderTests/TheOldReaderTests.m"
-                  timestampString = "421435118.853397"
+                  timestampString = "421464598.760308"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
                   endingLineNumber = "34"
-                  offsetFromSymbolStart = "66">
+                  offsetFromSymbolStart = "61">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -56,13 +56,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TheOldReaderTests/TheOldReaderTests.m"
-            timestampString = "421436246.41908"
+            timestampString = "421464598.025604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "-testLogin"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[TheOldReaderTests testLogin]"
+                  moduleName = "TheOldReaderTests"
+                  urlString = "file:///Users/wangdw/work/TheOldReader/TheOldReaderTests/TheOldReaderTests.m"
+                  timestampString = "421464604.781314"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "51">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__30-[TheOldReaderTests testLogin]_block_invoke"
+                  moduleName = "TheOldReaderTests"
+                  urlString = "file:///Users/wangdw/work/TheOldReader/TheOldReaderTests/TheOldReaderTests.m"
+                  timestampString = "421464604.781795"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "61">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -84,15 +114,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TheOldReader/TheOldReaderAPI.m"
-            timestampString = "421436467.171616"
+            timestampString = "421464598.025604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "-doLogin:password:callback:"
             landmarkType = "5">
          </BreakpointContent>
@@ -100,15 +130,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TheOldReader/TheOldReaderAPI.m"
-            timestampString = "421436707.699318"
+            timestampString = "421467322.510488"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "-doLogin:password:callback:"
             landmarkType = "5">
          </BreakpointContent>
@@ -116,23 +146,67 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TheOldReaderTests/TheOldReaderTests.m"
-            timestampString = "421436535.813532"
+            timestampString = "421464598.025604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "-testLogin"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__30-[TheOldReaderTests testLogin]_block_invoke"
+                  moduleName = "TheOldReaderTests"
+                  urlString = "file:///Users/wangdw/work/TheOldReader/TheOldReaderTests/TheOldReaderTests.m"
+                  timestampString = "421467406.041259"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__30-[TheOldReaderTests testLogin]_block_invoke"
+                  moduleName = "TheOldReaderTests"
+                  urlString = "file:///Users/wangdw/work/TheOldReader/TheOldReaderTests/TheOldReaderTests.m"
+                  timestampString = "421467406.041541"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "351">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__30-[TheOldReaderTests testLogin]_block_invoke"
+                  moduleName = "TheOldReaderTests"
+                  urlString = "file:///Users/wangdw/work/TheOldReader/TheOldReaderTests/TheOldReaderTests.m"
+                  timestampString = "421467406.041875"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "642">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TheOldReader/TheOldReaderUtil.m"
