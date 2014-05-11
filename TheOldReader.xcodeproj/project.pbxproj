@@ -461,6 +461,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"${PODS_ROOT}/Headers/ASIHTTPRequest\"",
 				);
 				INFOPLIST_FILE = "TheOldReaderTests/TheOldReaderTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -469,6 +470,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "$(inherited)";
+				PODS_ROOT = "${SRCROOT}/Pods";
 				PRELINK_LIBS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
@@ -492,6 +494,7 @@
 				MACH_O_TYPE = mh_bundle;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "$(inherited)";
+				PODS_ROOT = "${SRCROOT}/Pods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};

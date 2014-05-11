@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TheOldReaderTests/TheOldReaderTests.m"
-            timestampString = "421464598.025604"
+            timestampString = "421469867.775888"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "-testLogin"
             landmarkType = "5">
             <Locations>
@@ -56,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TheOldReaderTests/TheOldReaderTests.m"
-            timestampString = "421464598.025604"
+            timestampString = "421469867.775888"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "-testLogin"
             landmarkType = "5">
             <Locations>
@@ -150,11 +150,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TheOldReaderTests/TheOldReaderTests.m"
-            timestampString = "421464598.025604"
+            timestampString = "421469867.775888"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "-testLogin"
             landmarkType = "5">
             <Locations>
@@ -165,11 +165,11 @@
                   symbolName = "__30-[TheOldReaderTests testLogin]_block_invoke"
                   moduleName = "TheOldReaderTests"
                   urlString = "file:///Users/wangdw/work/TheOldReader/TheOldReaderTests/TheOldReaderTests.m"
-                  timestampString = "421467406.041259"
+                  timestampString = "421469064.383287"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
                   offsetFromSymbolStart = "67">
                </Location>
                <Location
@@ -179,11 +179,11 @@
                   symbolName = "__30-[TheOldReaderTests testLogin]_block_invoke"
                   moduleName = "TheOldReaderTests"
                   urlString = "file:///Users/wangdw/work/TheOldReader/TheOldReaderTests/TheOldReaderTests.m"
-                  timestampString = "421467406.041541"
+                  timestampString = "421469064.383567"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
                   offsetFromSymbolStart = "351">
                </Location>
                <Location
@@ -193,11 +193,11 @@
                   symbolName = "__30-[TheOldReaderTests testLogin]_block_invoke"
                   moduleName = "TheOldReaderTests"
                   urlString = "file:///Users/wangdw/work/TheOldReader/TheOldReaderTests/TheOldReaderTests.m"
-                  timestampString = "421467406.041875"
+                  timestampString = "421469064.383951"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
                   offsetFromSymbolStart = "642">
                </Location>
             </Locations>
