@@ -12,7 +12,7 @@ static NSDictionary* apis;
 
 +(NSString*)getLoginAPI{
     if (!apis) {
-        NSString* plist=[[NSBundle mainBundle] pathForResource:@"OpenAPI" ofType:@"plist"];
+        NSString* plist=[[NSBundle bundleForClass:[self class] ] pathForResource:@"OpenAPI" ofType:@"plist"];
         apis=[[NSDictionary alloc] initWithContentsOfFile:plist];
     }
     return [apis objectForKey:@"Login"];

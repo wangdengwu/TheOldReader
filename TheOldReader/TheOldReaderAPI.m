@@ -21,17 +21,25 @@
     [request setPostValue:@"reader" forKey:@"service"];
     [request setPostValue:[userName copy] forKey:@"Email"];
     [request setPostValue:[password copy] forKey:@"Passwd"];
+    ASIFormDataRequest *temp=request;
     [request setCompletionBlock:^{
-        NSString *callbackText=request.responseString;
+        NSString *callbackText=temp.responseString;
         NSArray *temps=[callbackText componentsSeparatedByString:@"\n"];
         NSLog(@"***************************%@",temps);
-        callback(YES,@"123sdasd");
+        NSString *keyToken=temps[2];//目前是第三个数据，以后不会操蛋的变吧
+        NSArray *keyAndValue=[keyToken componentsSeparatedByString:@"="];
+        NSLog(@"***************************%@",keyAndValue);
+        NSString *token=nil;
+        if (keyAndValue.count==2) {
+            token=keyAndValue[1];
+        }
+        callback(YES,token);
     }];
     
     [request setFailedBlock:^{
-        NSLog(@"%@",request.responseString);
+        NSLog(@"%@",temp.responseString);
         callback(NO,nil);
     }];
-    [request startSynchronous];
+    [request startAsynchronous];
 }
 @end

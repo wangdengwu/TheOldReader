@@ -31,14 +31,13 @@
 
 - (void)testLogin
 {
-    __block BOOL yes;
-    __block NSString *test;
     [api doLogin:@"dengwu.wang@gmail.com" password:@"qwer123" callback:^(BOOL isSucess, NSString *authToken) {
-        yes=isSucess;
-        test=authToken;
+        XCTAssertTrue(isSucess, @"测试登录成功");
+        XCTAssertNotNil(authToken, @"如果登录成功返回的authToken不能为nil");
+        NSLog(@"%@",authToken);
     }];
-    NSLog(@"%@",yes?@"YES":@"NO");
-    NSLog(@"%@",test);
+    //加异步等待，防止请求还未返回，进程已经退出
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:20]];
 }
 
 @end

@@ -14,8 +14,7 @@
 		3D6A5098191E9568009583F1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6A5097191E9568009583F1 /* MobileCoreServices.framework */; };
 		3D6A509A191E9575009583F1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6A5099191E9575009583F1 /* CFNetwork.framework */; };
 		3D6A509B191E9590009583F1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6A5095191E9556009583F1 /* libz.dylib */; };
-		3D6A509E191E9E35009583F1 /* OpenAPI.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3DCE82AB191E6A05004DE45C /* OpenAPI.plist */; };
-		3D6A509F191E9E99009583F1 /* OpenAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DCE82AB191E6A05004DE45C /* OpenAPI.plist */; };
+		3DC92A86191F0B63009BA7FF /* OpenAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DC92A83191F06F8009BA7FF /* OpenAPI.plist */; };
 		3DCE8284191E5C20004DE45C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE8283191E5C20004DE45C /* Foundation.framework */; };
 		3DCE8292191E5C20004DE45C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE8291191E5C20004DE45C /* XCTest.framework */; };
 		3DCE8293191E5C20004DE45C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE8283191E5C20004DE45C /* Foundation.framework */; };
@@ -44,7 +43,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				3D6A509E191E9E35009583F1 /* OpenAPI.plist in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +58,7 @@
 		3D6A5095191E9556009583F1 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3D6A5097191E9568009583F1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3D6A5099191E9575009583F1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		3DC92A83191F06F8009BA7FF /* OpenAPI.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = OpenAPI.plist; sourceTree = "<group>"; };
 		3DCE8280191E5C20004DE45C /* libTheOldReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTheOldReader.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DCE8283191E5C20004DE45C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3DCE8287191E5C20004DE45C /* TheOldReader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheOldReader-Prefix.pch"; sourceTree = "<group>"; };
@@ -68,7 +67,6 @@
 		3DCE829B191E5C20004DE45C /* TheOldReaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TheOldReaderTests-Info.plist"; sourceTree = "<group>"; };
 		3DCE829D191E5C20004DE45C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3DCE829F191E5C20004DE45C /* TheOldReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheOldReaderTests.m; sourceTree = "<group>"; };
-		3DCE82AB191E6A05004DE45C /* OpenAPI.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = OpenAPI.plist; sourceTree = "<group>"; };
 		3DCE82AC191E6AC3004DE45C /* TheOldReaderAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheOldReaderAPI.h; sourceTree = "<group>"; };
 		3DCE82AD191E6AC3004DE45C /* TheOldReaderAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheOldReaderAPI.m; sourceTree = "<group>"; };
 		3DCE82AF191E6B9C004DE45C /* TheOldReaderUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheOldReaderUtil.h; sourceTree = "<group>"; };
@@ -183,7 +181,7 @@
 		3DCE82A9191E69C9004DE45C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3DCE82AB191E6A05004DE45C /* OpenAPI.plist */,
+				3DC92A83191F06F8009BA7FF /* OpenAPI.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -271,7 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D6A509F191E9E99009583F1 /* OpenAPI.plist in Resources */,
+				3DC92A86191F0B63009BA7FF /* OpenAPI.plist in Resources */,
 				3DCE829E191E5C20004DE45C /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
