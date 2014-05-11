@@ -41,6 +41,7 @@
     }];
     [request startAsynchronous];
 }
+
 -(void)getUserInfo:(NSString*)token callback:(UserInfoCallBackBlock)callback{
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil getUserInfoAPI]]];
     [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@" GoogleLogin auth=%@",token]];
@@ -70,4 +71,59 @@
     }];
     [request startAsynchronous];
 }
+
+-(void)getFolderTag:(NSString *)token callback:(FolderTagCallBackBlock)callback{
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil getFolderTagAPI]]];
+    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",token]];
+    ASIHTTPRequest *temp = request;
+    [request setCompletionBlock:^{
+        NSString *callbackText = temp.responseString;
+        NSLog(@"***************************%@",callbackText);
+        NSError *error;
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:temp.responseData options:NSJSONReadingMutableLeaves error:&error];
+        NSArray *arr = [dic objectForKey:@"tags"];
+        NSMutableArray *folderTag = [[NSMutableArray alloc] init];
+        for (int i = 0; i<arr.count; i++) {
+            if (i == 0) {
+                //系统默认的starred文件夹路径多一层
+                NSString *folderPath = [[arr objectAtIndex:i] objectForKey:@"id"];
+                NSArray *titleArr = [folderPath componentsSeparatedByString:@"/"];
+                NSString *title = titleArr[4];
+                [folderTag addObject:title];
+            }else{
+                NSString *folderPath2 = [[arr objectAtIndex:i] objectForKey:@"id"];
+                NSArray *titleArr2 = [folderPath2 componentsSeparatedByString:@"/"];
+                NSString *title2 = titleArr2[3];
+                [folderTag addObject:title2];
+            }
+        }
+        callback(YES,folderTag);
+    }];
+    [request setFailedBlock:^{
+        callback(NO,nil);
+    }];
+    [request startAsynchronous];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end

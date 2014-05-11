@@ -26,7 +26,7 @@
 	<string>https://theoldreader.com/reader/api/0/disable-tag?s=%@</string>
 	<key>RenameFolder</key>
 	<string>https://theoldreader.com/reader/api/0/rename-tag?s=%@&amp;dest=%@</string>
-	<key>FolderList</key>
+	<key>FolderTag</key>
 	<string>https://theoldreader.com/reader/api/0/tag/list?output=json</string>
 	<key>UserInfo</key>
 	<string>https://theoldreader.com/reader/api/0/user-info?output=json</string>
