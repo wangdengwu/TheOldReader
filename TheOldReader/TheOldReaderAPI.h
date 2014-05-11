@@ -11,5 +11,6 @@
 @interface TheOldReaderAPI : NSObject
 
 -(void)doLogin:(NSString*)userName password:(NSString*)password callback:(LoginCallBackBlock)callback;
+-(void)getUserInfo:(NSString*)token callback:(UserInfoCallBackBlock)callback;
 
 @end

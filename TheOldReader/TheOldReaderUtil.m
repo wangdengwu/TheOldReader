@@ -10,11 +10,13 @@
 static NSDictionary* apis;
 @implementation TheOldReaderUtil
 
-+(NSString*)getLoginAPI{
++(void)load{
     if (!apis) {
         NSString* plist=[[NSBundle bundleForClass:[self class] ] pathForResource:@"OpenAPI" ofType:@"plist"];
         apis=[[NSDictionary alloc] initWithContentsOfFile:plist];
     }
+}
++(NSString*)getLoginAPI{
     return [apis objectForKey:@"Login"];
 }
 

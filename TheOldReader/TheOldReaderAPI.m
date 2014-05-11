@@ -9,6 +9,7 @@
 #import "TheOldReaderAPI.h"
 #import "ASIFormDataRequest.h"
 #import "TheOldReaderUtil.h"
+#import "TORUserInfo.h"
 
 #define APP_NAME @"alireader"
 
@@ -34,6 +35,31 @@
             token=keyAndValue[1];
         }
         callback(YES,token);
+    }];
+    
+    [request setFailedBlock:^{
+        NSLog(@"%@",temp.responseString);
+        callback(NO,nil);
+    }];
+    [request startAsynchronous];
+}
+-(void)getUserInfo:(NSString*)token callback:(UserInfoCallBackBlock)callback{
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil getUserInfoAPI]]];
+    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@" GoogleLogin auth=%@",token]];
+    ASIHTTPRequest *temp=request;
+    [request setCompletionBlock:^{
+        NSString *callbackText=temp.responseString;
+        NSLog(@"***************************%@",callbackText);
+        NSError *error;
+        NSDictionary *info=[NSJSONSerialization JSONObjectWithData:[temp responseData] options:NSJSONReadingMutableLeaves error:&error];
+        TORUserInfo *userInfo=[[TORUserInfo alloc]init];
+        userInfo.isBloggerUser=[[info objectForKey:@"isBloggerUser"] boolValue];
+        userInfo.userEmail=[info objectForKey:@"userEmail"];
+        userInfo.userId=[info objectForKey:@"userId"];
+        userInfo.userName=[info objectForKey:@"userName"];
+        userInfo.userProfileId=[info objectForKey:@"userProfileId"];
+        userInfo.isMultiLoginEnabled=[[info objectForKey:@"isMultiLoginEnabled"]boolValue];
+        callback(YES,userInfo);//需要copy
     }];
     
     [request setFailedBlock:^{

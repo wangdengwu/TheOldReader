@@ -51,4 +51,14 @@
     
 }
 
+-(void)testUserInfo
+{
+    [api getUserInfo:@"PPgr7anpZchq1YpBDGuP" callback:^(BOOL isSucess, TORUserInfo *userInfo) {
+        XCTAssertTrue(isSucess, @"获取用户信息成功");
+        XCTAssertNotNil(userInfo, @"如果获取用户信息成功，userInfo不能为nil");
+        NSLog(@"%@",userInfo);
+        CFRunLoopStop([runLoop getCFRunLoop]);
+        run=NO;
+    }];
+}
 @end
