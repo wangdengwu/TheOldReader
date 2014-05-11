@@ -7,9 +7,4 @@
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
 #endif
-#import "ASIFormDataRequest.h"
-#import "TORUserInfo.h"
 
-typedef void (^LoginCallBackBlock)(BOOL isSucess,NSString* authToken);
-
-typedef void (^UserInfoCallBackBlock)(BOOL isSucess,TORUserInfo* userInfo);

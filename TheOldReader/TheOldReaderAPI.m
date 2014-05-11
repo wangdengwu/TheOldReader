@@ -7,9 +7,7 @@
 //
 
 #import "TheOldReaderAPI.h"
-#import "ASIFormDataRequest.h"
 #import "TheOldReaderUtil.h"
-#import "TORUserInfo.h"
 
 #define APP_NAME @"alireader"
 

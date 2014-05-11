@@ -7,6 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ASIFormDataRequest.h"
+#import "TORUserInfo.h"
+
+typedef void (^LoginCallBackBlock)(BOOL isSucess,NSString* authToken);
+
+typedef void (^UserInfoCallBackBlock)(BOOL isSucess,TORUserInfo* userInfo);
 
 @interface TheOldReaderAPI : NSObject
 
