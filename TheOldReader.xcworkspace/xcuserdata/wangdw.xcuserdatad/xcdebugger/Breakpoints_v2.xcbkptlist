@@ -222,7 +222,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TheOldReaderTests/TheOldReaderTests.m"
@@ -235,13 +235,13 @@
             landmarkType = "5">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "__33-[TheOldReaderTests testUserInfo]_block_invoke"
                   moduleName = "TheOldReaderTests"
                   urlString = "file:///Users/wangdw/work/TheOldReader/TheOldReaderTests/TheOldReaderTests.m"
-                  timestampString = "421477520.441746"
+                  timestampString = "421490640.692306"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "58"
@@ -249,13 +249,13 @@
                   offsetFromSymbolStart = "356">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "__33-[TheOldReaderTests testUserInfo]_block_invoke"
                   moduleName = "TheOldReaderTests"
                   urlString = "file:///Users/wangdw/work/TheOldReader/TheOldReaderTests/TheOldReaderTests.m"
-                  timestampString = "421477520.4422"
+                  timestampString = "421490640.692657"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "58"
@@ -263,13 +263,13 @@
                   offsetFromSymbolStart = "1556">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "__33-[TheOldReaderTests testUserInfo]_block_invoke"
                   moduleName = "TheOldReaderTests"
                   urlString = "file:///Users/wangdw/work/TheOldReader/TheOldReaderTests/TheOldReaderTests.m"
-                  timestampString = "421477520.442689"
+                  timestampString = "421490640.692981"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "58"

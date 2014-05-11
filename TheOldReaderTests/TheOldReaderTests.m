@@ -45,6 +45,7 @@
         XCTAssertTrue(isSucess, @"测试登录成功");
         XCTAssertNotNil(authToken, @"如果登录成功返回的authToken不能为nil");
         NSLog(@"%@",authToken);
+        XCTAssertEqual(@"PPgr7anpZchq1YpBDGuP", authToken, @"authToken不对");
         CFRunLoopStop([runLoop getCFRunLoop]);
         run=NO;
     }];
