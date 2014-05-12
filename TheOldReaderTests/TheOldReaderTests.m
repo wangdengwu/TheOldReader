@@ -152,4 +152,29 @@
         run = NO;
     }];
 }
+
+-(void)testStream{
+    [api getStreamContentstWithStream:@"user/-/label/123" getNumber:@"20" callback:^(BOOL isSuccess, NSMutableArray *Content) {
+        XCTAssertTrue(isSuccess, @"获取成功");
+        XCTAssertNotNil(Content, @"数组不为空");
+        CFRunLoopStop([runLoop getCFRunLoop]);
+        run = NO;
+    }];
+}
+
+-(void)testMakeAllread{
+    [api makeasAllreadWithParam:@"user/-/label/123" callback:^(BOOL isSuccess) {
+        XCTAssertTrue(isSuccess, @"标记成功");
+        CFRunLoopStop([runLoop getCFRunLoop]);
+        run = NO;
+    }];
+}
+
+-(void)testUpdateItem{
+    [api UpdatingitemsWithId:@"53577c10fea0e7b4e5000c0d" state:YES star:YES callback:^(BOOL isSuccess) {
+        XCTAssertTrue(isSuccess, @"添加星标成功");
+        CFRunLoopStop([runLoop getCFRunLoop]);
+        run = NO;
+    }];
+}
 @end
