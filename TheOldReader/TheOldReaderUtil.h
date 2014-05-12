@@ -89,14 +89,19 @@
  
  * @param  n  每次请求的个数
  */
-+(NSString *)ItemsIdsAPI;
++(NSString *)getItemsIdsAPI;
 
+/*
+ * @brief  通过id获取文章内容
+ 
+ * @param  i  id
+ */
++(NSString *)postItemsContentAPI;
 
++(NSString *)getStreamContentsAPI;
 
++(NSString *)postMarkingallasreadAPI;
 
-
-
-
-
++(NSString *)postUpdatingitemsAPI;
 
 @end

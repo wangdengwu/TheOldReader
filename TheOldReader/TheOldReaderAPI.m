@@ -127,7 +127,7 @@
 -(void)removeFolder:(NSString *)folderPath callback:(RemoveFolderCallBackBlock)callback{
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil postRemoveFolderAPI]]];
     [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
-    [request setValue:folderPath forKey:@"s"];
+    [request setPostValue:folderPath forKey:@"s"];
     ASIFormDataRequest *temp = request;
     [request setCompletionBlock:^{
         NSString *callbackText = temp.responseString;
@@ -143,8 +143,8 @@
 
 -(void)renameFolderOldPath:(NSString *)oldPath newnPath:(NSString *)newPath callback:(RenameFolderCallBackBlock)callback{
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil postRenameFolderAPI]]];
-    [request setValue:oldPath forKey:@"s"];
-    [request setValue:newPath forKey:@"dest"];
+    [request setPostValue:oldPath forKey:@"s"];
+    [request setPostValue:newPath forKey:@"dest"];
     [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
     ASIFormDataRequest *temp = request;
     [request setCompletionBlock:^{
@@ -296,11 +296,11 @@
     [request startAsynchronous];
 }
 
--(void)getItmeIdsWithItem:(NSString *)item getNum:(NSString *)num Callback:(AllItemsIdCallbackBlock)callback{
-    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil ItemsIdsAPI]]];
+-(void)getItmeIdsWithItem:(NSString *)item getNumber:(NSString *)number callback:(AllItemsIdCallbackBlock)callback{
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil getItemsIdsAPI]]];
     [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
     [request setValue:item forKey:@"s"];
-    [request setValue:num forKey:@"n"];
+    [request setValue:number forKey:@"n"];
     ASIHTTPRequest *temp = request;
     [request setCompletionBlock:^{
         NSString *callbackText = temp.responseString;
@@ -320,6 +320,99 @@
     }];
     [request setFailedBlock:^{
         callback(NO,nil);
+    }];
+    [request startAsynchronous];
+}
+
+-(void)itemContentWithId:(NSString *)ids callback:(ItemContentCallbackBlock)callback{
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil postItemsContentAPI]]];
+    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
+    [request setPostValue:ids forKey:@"i"];
+    ASIFormDataRequest *temp = request;
+    [request setCompletionBlock:^{
+        NSString *callbackText = temp.responseString;
+        NSLog(@"%@",callbackText);
+        NSError *error;
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:temp.responseData options:NSJSONReadingMutableLeaves error:&error];
+        NSLog(@"%@",dic);
+    }];
+    
+    [request setFailedBlock:^{
+        callback(NO,nil);
+    }];
+    [request startAsynchronous];
+}
+
+-(void)getStreamContentstWithStream:(NSString *)Stream getNumber:(NSString *)number callback:(StreamContentCallbackBlock)callback{
+    NSString *url = [NSString stringWithFormat:[TheOldReaderUtil getStreamContentsAPI],Stream];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url]];
+    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
+    ASIHTTPRequest *temp = request;
+    [request setCompletionBlock:^{
+        NSString *callbackText = temp.responseString;
+        NSLog(@"%@",callbackText);
+        NSError *error;
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:temp.responseData options:NSJSONReadingMutableLeaves error:&error];
+        NSLog(@"%@",dic);
+    }];
+    [request setFailedBlock:^{
+        callback(NO,nil);
+    }];
+    [request startAsynchronous];
+}
+
+-(void)makeasAllreadWithParam:(NSString *)param callback:(MakeAsAllreadCallbackBlock)callback{
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil postMarkingallasreadAPI]]];
+    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
+    [request setPostValue:param forKey:@"s"];
+    ASIFormDataRequest *temp = request;
+    [request setCompletionBlock:^{
+        NSString *callbackText = temp.responseString;
+        NSLog(@"%@",callbackText);
+        if ([callbackText isEqualToString:@"OK"]) {
+            callback(YES);
+        }else{
+            callback(NO);
+        }
+    }];
+    [request setFailedBlock:^{
+        callback(NO);
+    }];
+    [request startAsynchronous];
+}
+
+-(void)UpdatingitemsWithId:(NSString *)ids state:(BOOL)state star:(BOOL)star callback:(UpdatingitemsCallbackBlock)callback{
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil postMarkingallasreadAPI]]];
+    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
+    if (state == YES) {
+        if (star == YES) {
+            [request setPostValue:ids forKey:@"i"];
+            [request setPostValue:@"user/-/state/com.google/stareed" forKey:@"a"];
+        }else{
+            [request setPostValue:ids forKey:@"i"];
+            [request setPostValue:@"user/-/state/com.google/read" forKey:@"a"];
+        }
+    }else{
+        if (star == YES) {
+            [request setPostValue:ids forKey:@"i"];
+            [request setPostValue:@"user/-/state/com.google/stareed" forKey:@"r"];
+        }else{
+            [request setPostValue:ids forKey:@"i"];
+            [request setPostValue:@"user/-/state/com.google/read" forKey:@"r"];
+        }
+    }
+    ASIFormDataRequest *temp = request;
+    [request setCompletionBlock:^{
+        NSString *callbackText = temp.responseString;
+        NSLog(@"%@",callbackText);
+        if ([callbackText isEqualToString:@"OK"]) {
+            callback(YES);
+        }else{
+            callback(NO);
+        }
+    }];
+    [request setFailedBlock:^{
+        callback(NO);
     }];
     [request startAsynchronous];
 }

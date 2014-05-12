@@ -136,9 +136,18 @@
 }
 
 -(void)testAllitems{
-    [api getItmeIdsWithItem:@"s=user/-/state/com.google/reading-list" getNum:@"20" Callback:^(BOOL isSuccess, NSMutableArray *allImtes) {
+    [api getItmeIdsWithItem:@"user/-/state/com.google/reading-list" getNumber:@"20" callback:^(BOOL isSuccess, NSMutableArray *allImtes){
         XCTAssertTrue(isSuccess, @"获取成功");
         XCTAssertNotNil(allImtes, @"数组不为空");
+        CFRunLoopStop([runLoop getCFRunLoop]);
+        run = NO;
+    }];
+}
+
+-(void)testItemContent{
+    [api itemContentWithId:@"5358755dfea0e78f1200079d" callback:^(BOOL isSuccess, NSMutableArray *itemContent) {
+        XCTAssertTrue(isSuccess, @"获取成功");
+        XCTAssertNotNil(itemContent, @"数组不为空");
         CFRunLoopStop([runLoop getCFRunLoop]);
         run = NO;
     }];

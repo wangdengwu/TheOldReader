@@ -60,4 +60,19 @@ static NSDictionary* apis;
     return [apis objectForKey:@"ItemsIds"];
 }
 
++(NSString *)postItemsContentAPI{
+    return [apis objectForKey:@"ItemContents"];
+}
+
++(NSString *)getItemsContentAPI{
+    return [apis objectForKey:@"ItemContents2"];
+}
+
++(NSString *)postMarkingallasreadAPI{
+    return [apis objectForKey:@"Markingallasread"];
+}
+
++(NSString *)postUpdatingitemsAPI{
+    return [apis objectForKey:@"Updatingitems"];
+}
 @end
