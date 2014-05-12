@@ -101,4 +101,13 @@
     }];
 }
 
+-(void)testSubscriptionsList{
+    [api getSubscriptionsListWithCallback:^(BOOL isSucess, NSMutableArray *subscriptionsList) {
+        XCTAssertTrue(isSucess, @"获取成功");
+        XCTAssertNotNil(subscriptionsList, @"存有数据");
+        NSLog(@"%@",subscriptionsList);
+        CFRunLoopStop([runLoop getCFRunLoop]);
+        run = NO;
+    }];
+}
 @end

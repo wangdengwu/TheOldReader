@@ -193,9 +193,18 @@
         for (int i = 0; i<arr.count; i++) {
             subsciptions.ids = [arr[i] objectForKey:@"id"];
             subsciptions.title = [arr[i] objectForKey:@"title"];
-            
+            subsciptions.categories = [arr[i] objectForKey:@"categories"];
+            subsciptions.url = [arr[i] objectForKey:@"url"];
+            subsciptions.htmlUrl = [arr[i] objectForKey:@"htmlUrl"];
+            subsciptions.icon = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[arr[i] objectForKey:@"iconUrl"]]]];
             [list addObject:subsciptions];
         }
+        callback(YES,list);
     }];
+    
+    [request setFailedBlock:^{
+        callback(NO,nil);
+    }];
+    [request startAsynchronous];
 }
 @end
