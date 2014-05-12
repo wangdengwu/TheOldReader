@@ -52,41 +52,12 @@ static NSDictionary* apis;
     return [apis objectForKey:@"AddSubscription"];
 }
 
-+(NSString *)postChangeSubscriptionTitleAPI{
-    return [apis objectForKey:@"ChangeSubscriptionTitle"];
-}
-
-+(NSString *)postMoveSubscriptionToFolderAPI{
-    return [apis objectForKey:@"MoveSubscriptionToFolder"];
-}
-
-+(NSString *)postMoveSubscriptionToDefaultFolderAPI{
-    return [apis objectForKey:@"MoveSubscriptionToDefaultFolder"];
-}
-
-+(NSString *)postRemoveSubscriptionAPI{
-    return [apis objectForKey:@"RemoveSubscription"];
++(NSString *)UpdatingSubscriptionAPI{
+    return [apis objectForKey:@"UpdatingSubscription"];
 }
 
 +(NSString *)getAllItemsIdsAPI{
-    return [apis objectForKey:@"AllItemsIds"];
+    return [apis objectForKey:@"ItemsIds"];
 }
-
-+(NSString *)getStarredItemsAPI{
-    return [apis objectForKey:@"StarredItems"];
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @end

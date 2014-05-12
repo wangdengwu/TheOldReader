@@ -208,7 +208,7 @@
     [request startAsynchronous];
 }
 
--(void)addSubscriptionsWithAddress:(NSString *)address callback:(AddSubscription)callback{
+-(void)addSubscriptionsWithAddress:(NSString *)address callback:(AddSubscriptionCallBackBlock)callback{
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil postAddSubscriptionAPI]]];
     [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
     [request setValue:address forKey:@"quickadd"];
@@ -226,6 +226,100 @@
     }];
     [request setFailedBlock:^{
         callback(NO);
+    }];
+    [request startAsynchronous];
+}
+
+-(void)changeSubscriptionTitleWithId:(NSString *)ids newTitle:(NSString *)title callback:(ChangeSubscriptionTitleCallBackBlock)callback{
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil UpdatingSubscriptionAPI]]];
+    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
+    [request setValue:@"edit" forKey:@"ac"];
+    [request setValue:ids forKey:@"id"];
+    [request setValue:title forKey:@"t"];
+    ASIFormDataRequest *temp = request;
+    [request setCompletionBlock:^{
+        NSString *callbackText = temp.responseString;
+        NSLog(@"%@",callbackText);
+        if ([temp.responseString isEqualToString:@"OK"]) {
+            callback(YES);
+        }else{
+            callback(NO);
+        }
+    }];
+    [request setFailedBlock:^{
+        callback(NO);
+    }];
+    [request startAsynchronous];
+}
+
+-(void)moveSubscriptionToFolderWithId:(NSString *)ids folderPath:(NSString *)folderPath callback:(MoveSubscriptionToFolderCallBackBlock)callback{
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil UpdatingSubscriptionAPI]]];
+    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
+    [request setValue:@"edit" forKey:@"ac"];
+    [request setValue:ids forKey:@"id"];
+    [request setValue:folderPath forKey:@"a"];
+    ASIFormDataRequest *temp = request;
+    [request setCompletionBlock:^{
+        NSString *callbackText = temp.responseString;
+        NSLog(@"%@",callbackText);
+        if ([temp.responseString isEqualToString:@"OK"]) {
+            callback(YES);
+        }else{
+            callback(NO);
+        }
+    }];
+    [request setFailedBlock:^{
+        callback(NO);
+    }];
+    [request startAsynchronous];
+}
+
+-(void)removeSubscriptionFromFolderWithId:(NSString *)ids folderPath:(NSString *)folderPath callback:(RemoveSubscriptionFromFolderCallBackBlock)callback{
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil UpdatingSubscriptionAPI]]];
+    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
+    [request setValue:@"edit" forKey:@"ac"];
+    [request setValue:ids forKey:@"id"];
+    [request setValue:folderPath forKey:@"r"];
+    ASIFormDataRequest *temp = request;
+    [request setCompletionBlock:^{
+        NSString *callbackText = temp.responseString;
+        NSLog(@"%@",callbackText);
+        if ([temp.responseString isEqualToString:@"OK"]) {
+            callback(YES);
+        }else{
+            callback(NO);
+        }
+    }];
+    [request setFailedBlock:^{
+        callback(NO);
+    }];
+    [request startAsynchronous];
+}
+
+-(void)getItmeIdsWithItem:(NSString *)item getNum:(NSString *)num Callback:(AllItemsIdCallbackBlock)callback{
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil ItemsIdsAPI]]];
+    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
+    [request setValue:item forKey:@"s"];
+    [request setValue:num forKey:@"n"];
+    ASIHTTPRequest *temp = request;
+    [request setCompletionBlock:^{
+        NSString *callbackText = temp.responseString;
+        NSLog(@"%@",callbackText);
+        NSError *error;
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:temp.responseData options:NSJSONReadingMutableLeaves error:&error];
+        NSArray *arr = [dic objectForKey:@"itemRefs"];
+        NSMutableArray *itemids = [[NSMutableArray alloc] init];
+        TORItemIds *item = [[TORItemIds alloc] init];
+        for (int i = 0; i<arr.count; i++) {
+            item.ids = [arr[i] objectForKey:@"id"];
+            item.directStreamIds = [arr[i] objectForKey:@"directStreamIds"];
+            item.timestampUsec = [arr[i] objectForKey:@"timestampUsec"];
+            [itemids addObject:item];
+        }
+        callback(YES,itemids);
+    }];
+    [request setFailedBlock:^{
+        callback(NO,nil);
     }];
     [request startAsynchronous];
 }

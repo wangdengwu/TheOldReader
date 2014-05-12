@@ -59,7 +59,7 @@
  * @param  s  源id
  * @param  t  新名称
  */
-+(NSString *)postChangeSubscriptionTitleAPI;
++(NSString *)UpdatingSubscriptionAPI;
 
 /*
  * @brief  将订阅源移动到文件夹
@@ -67,7 +67,7 @@
  * @param  s  源id
  * @param  a  文件夹路径（user/-/label/Folder）
  */
-+(NSString *)postMoveSubscriptionToFolderAPI;
+//+(NSString *)postMoveSubscriptionToFolderAPI;
 
 /*
  * @brief  将订阅源移动到默认文件夹（从自定义文件夹内移除）
@@ -75,28 +75,22 @@
  * @param  s  源id
  * @param  r  文件夹路径（user/-/label/Folder）
  */
-+(NSString *)postMoveSubscriptionToDefaultFolderAPI;
+//+(NSString *)postMoveSubscriptionToDefaultFolderAPI;
 
 /*
  * @brief  将订阅源移动到默认文件夹（从自定义文件夹内移除）
  
  * @param  s  源id
  */
-+(NSString *)postRemoveSubscriptionAPI;
+//+(NSString *)postRemoveSubscriptionAPI;
 
 /*
  * @brief  获取所有文章的id
  
  * @param  n  每次请求的个数
  */
-+(NSString *)getAllItemsIdsAPI;
++(NSString *)ItemsIdsAPI;
 
-/*
- * @brief  获取星标文章的id
- 
- * @param  n  每次请求的个数
- */
-+(NSString *)getStarredItemsAPI;
 
 
 

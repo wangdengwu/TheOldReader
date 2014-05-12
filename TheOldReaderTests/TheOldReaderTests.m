@@ -118,4 +118,29 @@
         run = NO;
     }];
 }
+
+-(void)testChangeSubTitle{
+    [api changeSubscriptionTitleWithId:@"feed/53577c10fea0e7b4e5000c0b" newTitle:@"title" callback:^(BOOL isSucess) {
+        XCTAssertTrue(isSucess, @"修改成功");
+        CFRunLoopStop([runLoop getCFRunLoop]);
+        run = NO;
+    }];
+}
+
+-(void)testRemoveSubscriptionFromFolder{
+    [api removeSubscriptionFromFolderWithId:@"feed/53577c10fea0e7b4e5000c0b" folderPath:@"user/-/label/12345" callback:^(BOOL isSuccess) {
+        XCTAssertTrue(isSuccess, @"修改成功");
+        CFRunLoopStop([runLoop getCFRunLoop]);
+        run = NO;
+    }];
+}
+
+-(void)testAllitems{
+    [api getItmeIdsWithItem:@"s=user/-/state/com.google/reading-list" getNum:@"20" Callback:^(BOOL isSuccess, NSMutableArray *allImtes) {
+        XCTAssertTrue(isSuccess, @"获取成功");
+        XCTAssertNotNil(allImtes, @"数组不为空");
+        CFRunLoopStop([runLoop getCFRunLoop]);
+        run = NO;
+    }];
+}
 @end
