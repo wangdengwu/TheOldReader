@@ -75,7 +75,7 @@
 }
 
 -(void)testRemoveFolder{
-    [api RemoveFolder:@"user/-/label/123" callback:^(BOOL isSucess) {
+    [api removeFolder:@"user/-/label/123" callback:^(BOOL isSucess) {
         XCTAssertTrue(isSucess, @"删除成功");
         NSLog(@"%hhd",isSucess);
         CFRunLoopStop([runLoop getCFRunLoop]);
@@ -94,7 +94,7 @@
 }
 
 -(void)testRenameFolder{
-    [api RenameFolderOldPath:@"user/-/label/1234" newnPath:@"user/-/label/12345" callback:^(BOOL isSucess) {
+    [api renameFolderOldPath:@"user/-/label/1234" newnPath:@"user/-/label/12345" callback:^(BOOL isSucess) {
         XCTAssertTrue(isSucess, @"修改成功");
         CFRunLoopStop([runLoop getCFRunLoop]);
         run = NO;
@@ -106,6 +106,14 @@
         XCTAssertTrue(isSucess, @"获取成功");
         XCTAssertNotNil(subscriptionsList, @"存有数据");
         NSLog(@"%@",subscriptionsList);
+        CFRunLoopStop([runLoop getCFRunLoop]);
+        run = NO;
+    }];
+}
+
+-(void)testAddSubscription{
+    [api addSubscriptionsWithAddress:@"beyondvincent.com/atom.xml" callback:^(BOOL isSucess) {
+        XCTAssertTrue(isSucess, @"添加成功");
         CFRunLoopStop([runLoop getCFRunLoop]);
         run = NO;
     }];

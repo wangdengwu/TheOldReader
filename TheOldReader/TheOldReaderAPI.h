@@ -18,7 +18,7 @@ typedef void(^RemoveFolderCallBackBlock) (BOOL isSucess);
 typedef void(^UnreadCountCallBackBlock) (BOOL isSucess, NSDictionary *unread);
 typedef void(^RenameFolderCallBackBlock) (BOOL isSucess);
 typedef void(^SubscriptionsListCallBackBlock) (BOOL isSucess, NSMutableArray *subscriptionsList);
-
+typedef void(^AddSubscription) (BOOL isSucess);
 
 @interface TheOldReaderAPI : NSObject
 
@@ -28,13 +28,13 @@ typedef void(^SubscriptionsListCallBackBlock) (BOOL isSucess, NSMutableArray *su
 
 -(void)getFolderTagWithCallback:(FolderTagCallBackBlock)callback;
 
--(void)RemoveFolder:(NSString *)folderPath callback:(RemoveFolderCallBackBlock)callback;
+-(void)removeFolder:(NSString *)folderPath callback:(RemoveFolderCallBackBlock)callback;
 
--(void)RenameFolderOldPath:(NSString *)oldPath newnPath:(NSString *)newPath callback:(RenameFolderCallBackBlock)callback;
+-(void)renameFolderOldPath:(NSString *)oldPath newnPath:(NSString *)newPath callback:(RenameFolderCallBackBlock)callback;
 
 -(void)getUnreadCountWithCallback:(UnreadCountCallBackBlock)callback;
 
 -(void)getSubscriptionsListWithCallback:(SubscriptionsListCallBackBlock)callback;
 
-
+-(void)addSubscriptionsWithAddress:(NSString *)address callback:(AddSubscription)callback;
 @end

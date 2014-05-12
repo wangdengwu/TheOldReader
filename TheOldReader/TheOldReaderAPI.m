@@ -124,7 +124,7 @@
 }
 
 //以下均未测试，公司xcode版本过低。。先把代码写了
--(void)RemoveFolder:(NSString *)folderPath callback:(RemoveFolderCallBackBlock)callback{
+-(void)removeFolder:(NSString *)folderPath callback:(RemoveFolderCallBackBlock)callback{
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil postRemoveFolderAPI]]];
     [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
     [request setValue:folderPath forKey:@"s"];
@@ -141,7 +141,7 @@
     [request startAsynchronous];
 }
 
--(void)RenameFolderOldPath:(NSString *)oldPath newnPath:(NSString *)newPath callback:(RenameFolderCallBackBlock)callback{
+-(void)renameFolderOldPath:(NSString *)oldPath newnPath:(NSString *)newPath callback:(RenameFolderCallBackBlock)callback{
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil postRenameFolderAPI]]];
     [request setValue:oldPath forKey:@"s"];
     [request setValue:newPath forKey:@"dest"];
@@ -204,6 +204,28 @@
     
     [request setFailedBlock:^{
         callback(NO,nil);
+    }];
+    [request startAsynchronous];
+}
+
+-(void)addSubscriptionsWithAddress:(NSString *)address callback:(AddSubscription)callback{
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil postAddSubscriptionAPI]]];
+    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
+    [request setValue:address forKey:@"quickadd"];
+    ASIFormDataRequest *temp = request;
+    [request setCompletionBlock:^{
+        NSString *callbackText = temp.responseString;
+        NSLog(@"%@",callbackText);
+        NSError *error;
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:temp.responseData options:NSJSONReadingMutableLeaves error:&error];
+        if ([[dic objectForKey:@"numResults"] isEqualToString:@"1"]) {
+            callback(YES);
+        }else{
+            callback(NO);
+        }
+    }];
+    [request setFailedBlock:^{
+        callback(NO);
     }];
     [request startAsynchronous];
 }
