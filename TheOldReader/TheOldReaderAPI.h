@@ -12,18 +12,13 @@
 #import "TORSubscriptionsList.h"
 
 typedef void (^LoginCallBackBlock)(BOOL isSucess, NSString* authToken);
-
 typedef void (^UserInfoCallBackBlock)(BOOL isSucess, TORUserInfo* userInfo);
-
 typedef void (^FolderTagCallBackBlock)(BOOL isSucess, NSMutableArray *folderList);
-
 typedef void(^RemoveFolderCallBackBlock) (BOOL isSucess);
-
 typedef void(^UnreadCountCallBackBlock) (BOOL isSucess, NSDictionary *unread);
-
 typedef void(^RenameFolderCallBackBlock) (BOOL isSucess);
-
 typedef void(^SubscriptionsListCallBackBlock) (BOOL isSucess, NSMutableArray *subscriptionsList);
+
 
 @interface TheOldReaderAPI : NSObject
 
