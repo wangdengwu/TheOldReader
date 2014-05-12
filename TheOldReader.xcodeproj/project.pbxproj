@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0172AB4119209A8E0092D385 /* TORSubscriptionsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0172AB4019209A8E0092D385 /* TORSubscriptionsList.m */; };
 		3D57BD71191F7185004ABA9E /* OpenAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D57BD70191F7175004ABA9E /* OpenAPI.plist */; };
 		3D57BD72191F7192004ABA9E /* OpenAPI.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D57BD70191F7175004ABA9E /* OpenAPI.plist */; };
 		3D6A508C191E9315009583F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D6A508A191E92F8009583F1 /* UIKit.framework */; };
@@ -51,6 +52,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0172AB3F19209A8E0092D385 /* TORSubscriptionsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TORSubscriptionsList.h; sourceTree = "<group>"; };
+		0172AB4019209A8E0092D385 /* TORSubscriptionsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TORSubscriptionsList.m; sourceTree = "<group>"; };
 		23407BF638EA45ED83D75AB1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		3D57BD70191F7175004ABA9E /* OpenAPI.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = OpenAPI.plist; path = Resources/OpenAPI.plist; sourceTree = SOURCE_ROOT; };
 		3D6A508A191E92F8009583F1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -113,6 +116,8 @@
 			children = (
 				3DC92A88191F233C009BA7FF /* TORUserInfo.h */,
 				3DC92A89191F233C009BA7FF /* TORUserInfo.m */,
+				0172AB3F19209A8E0092D385 /* TORSubscriptionsList.h */,
+				0172AB4019209A8E0092D385 /* TORSubscriptionsList.m */,
 			);
 			name = DataObject;
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 			files = (
 				3DC92A8A191F233C009BA7FF /* TORUserInfo.m in Sources */,
 				3DCE82B1191E6B9C004DE45C /* TheOldReaderUtil.m in Sources */,
+				0172AB4119209A8E0092D385 /* TORSubscriptionsList.m in Sources */,
 				3DCE82AE191E6AC3004DE45C /* TheOldReaderAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

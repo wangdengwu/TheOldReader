@@ -11,7 +11,22 @@
 
 #define APP_NAME @"alireader"
 
+@interface TheOldReaderAPI (){
+    NSUserDefaults *userdefaults;
+}
+
+@end
+
 @implementation TheOldReaderAPI
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        userdefaults = [NSUserDefaults standardUserDefaults];
+    }
+    return self;
+}
 
 -(void)doLogin:(NSString*)userName password:(NSString*)password callback:(LoginCallBackBlock)callback{
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil getLoginAPI]]];
@@ -33,6 +48,9 @@
             token=keyAndValue[1];
         }
         callback(YES,token);
+        //登陆时候保存下来，省去后面方法调用再次传入令牌
+        [userdefaults setObject:token forKey:@"token"];
+        [userdefaults synchronize];
     }];
     
     [request setFailedBlock:^{
@@ -42,9 +60,9 @@
     [request startAsynchronous];
 }
 
--(void)getUserInfo:(NSString*)token callback:(UserInfoCallBackBlock)callback{
+-(void)getUserInfoWithCallback:(UserInfoCallBackBlock)callback{
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil getUserInfoAPI]]];
-    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@" GoogleLogin auth=%@",token]];
+    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@" GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
     ASIHTTPRequest *temp=request;
     [request setCompletionBlock:^{
         NSString *callbackText=temp.responseString;
@@ -72,9 +90,9 @@
     [request startAsynchronous];
 }
 
--(void)getFolderTag:(NSString *)token callback:(FolderTagCallBackBlock)callback{
+-(void)getFolderTagWithCallback:(FolderTagCallBackBlock)callback{
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil getFolderTagAPI]]];
-    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",token]];
+    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
     ASIHTTPRequest *temp = request;
     [request setCompletionBlock:^{
         NSString *callbackText = temp.responseString;
@@ -105,25 +123,79 @@
     [request startAsynchronous];
 }
 
+//以下均未测试，公司xcode版本过低。。先把代码写了
+-(void)RemoveFolder:(NSString *)folderPath callback:(RemoveFolderCallBackBlock)callback{
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil postRemoveFolderAPI]]];
+    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
+    [request setValue:folderPath forKey:@"s"];
+    ASIFormDataRequest *temp = request;
+    [request setCompletionBlock:^{
+        NSString *callbackText = temp.responseString;
+        NSLog(@"%@",callbackText);
+        callback(YES);
+    }];
+    
+    [request setFailedBlock:^{
+        callback(NO);
+    }];
+    [request startAsynchronous];
+}
 
+-(void)RenameFolderOldPath:(NSString *)oldPath newnPath:(NSString *)newPath callback:(RenameFolderCallBackBlock)callback{
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil postRenameFolderAPI]]];
+    [request setValue:oldPath forKey:@"s"];
+    [request setValue:newPath forKey:@"dest"];
+    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
+    ASIFormDataRequest *temp = request;
+    [request setCompletionBlock:^{
+        NSString *callbackText = temp.responseString;
+        if ([callbackText isEqualToString:@"OK"]) {
+            callback(YES);
+        }
+    }];
+    [request setFailedBlock:^{
+        callback(NO);
+    }];
+    
+}
 
+-(void)getUnreadCountWithCallback:(UnreadCountCallBackBlock)callback{
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil getUnreadCountAPI]]];
+    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
+    ASIHTTPRequest *temp = request;
+    [request setCompletionBlock:^{
+        NSString *callbackText = temp.responseString;
+        NSLog(@"%@",callbackText);
+        NSError *error;
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:temp.responseData options:NSJSONReadingMutableLeaves error:&error];
+        NSDictionary *unread = [dic objectForKey:@"unreadcounts"];
+        callback(YES,unread);
+    }];
+    
+    [request setFailedBlock:^{
+        callback(NO,nil);
+    }];
+    [request startAsynchronous];
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-(void)getSubscriptionsListWithCallback:(SubscriptionsListCallBackBlock)callback{
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil getSubscriptionsListAPI]]];
+    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
+    ASIHTTPRequest *temp = request;
+    [request setCompletionBlock:^{
+        NSString *callbackText = temp.responseString;
+        NSLog(@"%@",callbackText);
+        NSError *error;
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:temp.responseData options:NSJSONReadingMutableLeaves error:&error];
+        NSArray *arr = [dic objectForKey:@"subscriptions"];
+        NSMutableArray *list = [[NSMutableArray alloc] init];
+        TORSubscriptionsList *subsciptions = [[TORSubscriptionsList alloc] init];
+        for (int i = 0; i<arr.count; i++) {
+            subsciptions.ids = [arr[i] objectForKey:@"id"];
+            subsciptions.title = [arr[i] objectForKey:@"title"];
+            
+            [list addObject:subsciptions];
+        }
+    }];
+}
 @end

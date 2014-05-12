@@ -54,7 +54,7 @@
 
 -(void)testUserInfo
 {
-    [api getUserInfo:@"jEMAfbMXzy657p9X1LUH" callback:^(BOOL isSucess, TORUserInfo *userInfo) {
+    [api getUserInfoWithCallback:^(BOOL isSucess, TORUserInfo *userInfo) {
         XCTAssertTrue(isSucess, @"获取用户信息成功");
         XCTAssertNotNil(userInfo, @"如果获取用户信息成功，userInfo不能为nil");
         NSLog(@"%@",userInfo);
@@ -65,7 +65,7 @@
 
 -(void)testFolderTag
 {
-    [api getFolderTag:@"PPgr7anpZchq1YpBDGuP" callback:^(BOOL isSucess, NSMutableArray *folderList) {
+    [api getFolderTagWithCallback:^(BOOL isSucess, NSMutableArray *folderList) {
         XCTAssertTrue(isSucess, @"获取文件夹列表成功");
         XCTAssertNotNil(folderList, @"存有列表的数组");
         NSLog(@"%@",folderList);
@@ -73,4 +73,32 @@
         run = NO;
     }];
 }
+
+-(void)testRemoveFolder{
+    [api RemoveFolder:@"user/-/label/123" callback:^(BOOL isSucess) {
+        XCTAssertTrue(isSucess, @"删除成功");
+        NSLog(@"%hhd",isSucess);
+        CFRunLoopStop([runLoop getCFRunLoop]);
+        run = NO;
+    }];
+}
+
+-(void)testUnreadCount{
+    [api getUnreadCountWithCallback:^(BOOL isSucess, NSDictionary *unread) {
+        XCTAssertTrue(isSucess, @"获取未读文章数量成功");
+        XCTAssertNotNil(unread, @"存有信息");
+        NSLog(@"%@",unread);
+        CFRunLoopStop([runLoop getCFRunLoop]);
+        run = NO;
+    }];
+}
+
+-(void)testRenameFolder{
+    [api RenameFolderOldPath:@"user/-/label/1234" newnPath:@"user/-/label/12345" callback:^(BOOL isSucess) {
+        XCTAssertTrue(isSucess, @"修改成功");
+        CFRunLoopStop([runLoop getCFRunLoop]);
+        run = NO;
+    }];
+}
+
 @end
