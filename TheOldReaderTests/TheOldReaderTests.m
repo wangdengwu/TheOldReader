@@ -87,7 +87,6 @@
     [api getUnreadCountWithCallback:^(BOOL isSucess, NSDictionary *unread) {
         XCTAssertTrue(isSucess, @"获取未读文章数量成功");
         XCTAssertNotNil(unread, @"存有信息");
-        NSLog(@"%@",unread);
         CFRunLoopStop([runLoop getCFRunLoop]);
         run = NO;
     }];
@@ -112,13 +111,13 @@
 }
 
 -(void)testAddSubscription{
-    [api addSubscriptionsWithAddress:@"beyondvincent.com/atom.xml" callback:^(BOOL isSucess) {
+    [api addSubscriptionsWithAddress:@"http://feed.cnblogs.com/blog/u/173029/rss" callback:^(BOOL isSucess) {
         XCTAssertTrue(isSucess, @"添加成功");
         CFRunLoopStop([runLoop getCFRunLoop]);
         run = NO;
     }];
 }
-
+/*   注释的为还没测试
 -(void)testChangeSubTitle{
     [api changeSubscriptionTitleWithId:@"feed/53577c10fea0e7b4e5000c0b" newTitle:@"title" callback:^(BOOL isSucess) {
         XCTAssertTrue(isSucess, @"修改成功");
@@ -177,4 +176,5 @@
         run = NO;
     }];
 }
+ */
 @end
