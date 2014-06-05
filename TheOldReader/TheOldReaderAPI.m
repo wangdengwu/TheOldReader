@@ -208,15 +208,15 @@
     }];
     [request startAsynchronous];
 }
-#error 错误，不能完成请求，每次都返回错误
+
 -(void)addSubscriptionsWithAddress:(NSString *)address callback:(AddSubscriptionCallBackBlock)callback{
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil postAddSubscriptionAPI]]];
-    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
     [request setPostValue:address forKey:@"quickadd"];
+    [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
     ASIFormDataRequest *temp = request;
     [request setCompletionBlock:^{
         NSString *callbackText = temp.responseString;
-        NSLog(@"%@",callbackText);
+        NSLog(@"-------------------------%@",callbackText);
         NSError *error;
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:temp.responseData options:NSJSONReadingMutableLeaves error:&error];
         NSLog(@"*****************************************%@",dic);
@@ -231,13 +231,13 @@
     }];
     [request startAsynchronous];
 }
-//以下均未测试，公司xcode版本过低。。先把代码写了
+
 -(void)changeSubscriptionTitleWithId:(NSString *)ids newTitle:(NSString *)title callback:(ChangeSubscriptionTitleCallBackBlock)callback{
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil UpdatingSubscriptionAPI]]];
+    [request setPostValue:@"edit" forKey:@"ac"];
+    [request setPostValue:ids forKey:@"s"];
+    [request setPostValue:title forKey:@"t"];
     [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
-    [request setValue:@"edit" forKey:@"ac"];
-    [request setValue:ids forKey:@"id"];
-    [request setValue:title forKey:@"t"];
     ASIFormDataRequest *temp = request;
     [request setCompletionBlock:^{
         NSString *callbackText = temp.responseString;
@@ -279,9 +279,10 @@
 -(void)removeSubscriptionFromFolderWithId:(NSString *)ids folderPath:(NSString *)folderPath callback:(RemoveSubscriptionFromFolderCallBackBlock)callback{
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:[TheOldReaderUtil UpdatingSubscriptionAPI]]];
     [request addRequestHeader:@"Authorization" value:[NSString stringWithFormat:@"GoogleLogin auth=%@",[userdefaults objectForKey:@"token"]]];
-    [request setValue:@"edit" forKey:@"ac"];
-    [request setValue:ids forKey:@"id"];
-    [request setValue:folderPath forKey:@"r"];
+    [request setPostValue:@"edit" forKey:@"ac"];
+    [request setPostValue:ids forKey:@"s"];
+    [request setPostValue:folderPath forKey:@"r"];
+    
     ASIFormDataRequest *temp = request;
     [request setCompletionBlock:^{
         NSString *callbackText = temp.responseString;

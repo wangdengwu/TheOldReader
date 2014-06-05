@@ -10,7 +10,7 @@
 #import "TheOldReaderAPI.h"
 
 @interface TheOldReaderTests : XCTestCase{
-    TheOldReaderAPI * api;
+    TheOldReaderAPI *api;
     NSRunLoop* runLoop;
     __block BOOL run;
 }
@@ -44,7 +44,7 @@
     [api doLogin:@"370802756@qq.com" password:@"3235967" callback:^(BOOL isSucess, NSString *authToken) {
         XCTAssertTrue(isSucess, @"测试登录成功");
         XCTAssertNotNil(authToken, @"如果登录成功返回的authToken不能为nil");
-        NSLog(@"%@",authToken);
+//        NSLog(@"%@",authToken);
         XCTAssertEqualObjects(@"jEMAfbMXzy657p9X1LUH", authToken, @"authToken不对");
         CFRunLoopStop([runLoop getCFRunLoop]);
         run=NO;
@@ -57,7 +57,7 @@
     [api getUserInfoWithCallback:^(BOOL isSucess, TORUserInfo *userInfo) {
         XCTAssertTrue(isSucess, @"获取用户信息成功");
         XCTAssertNotNil(userInfo, @"如果获取用户信息成功，userInfo不能为nil");
-        NSLog(@"%@",userInfo);
+//        NSLog(@"%@",userInfo);
         CFRunLoopStop([runLoop getCFRunLoop]);
         run=NO;
     }];
@@ -68,7 +68,7 @@
     [api getFolderTagWithCallback:^(BOOL isSucess, NSMutableArray *folderList) {
         XCTAssertTrue(isSucess, @"获取文件夹列表成功");
         XCTAssertNotNil(folderList, @"存有列表的数组");
-        NSLog(@"%@",folderList);
+//        NSLog(@"%@",folderList);
         CFRunLoopStop([runLoop getCFRunLoop]);
         run = NO;
     }];
@@ -77,7 +77,7 @@
 -(void)testRemoveFolder{
     [api removeFolder:@"user/-/label/123" callback:^(BOOL isSucess) {
         XCTAssertTrue(isSucess, @"删除成功");
-        NSLog(@"%hhd",isSucess);
+//        NSLog(@"%hhd",isSucess);
         CFRunLoopStop([runLoop getCFRunLoop]);
         run = NO;
     }];
@@ -104,36 +104,40 @@
     [api getSubscriptionsListWithCallback:^(BOOL isSucess, NSMutableArray *subscriptionsList) {
         XCTAssertTrue(isSucess, @"获取成功");
         XCTAssertNotNil(subscriptionsList, @"存有数据");
-        NSLog(@"%@",subscriptionsList);
+//        NSLog(@"%@",subscriptionsList);
         CFRunLoopStop([runLoop getCFRunLoop]);
         run = NO;
     }];
 }
 
--(void)testAddSubscription{
-    [api addSubscriptionsWithAddress:@"http://feed.cnblogs.com/blog/u/173029/rss" callback:^(BOOL isSucess) {
-        XCTAssertTrue(isSucess, @"添加成功");
-        CFRunLoopStop([runLoop getCFRunLoop]);
-        run = NO;
-    }];
-}
-/*   注释的为还没测试
 -(void)testChangeSubTitle{
-    [api changeSubscriptionTitleWithId:@"feed/53577c10fea0e7b4e5000c0b" newTitle:@"title" callback:^(BOOL isSucess) {
+    [api changeSubscriptionTitleWithId:@"feed/53907559fea0e752550007db" newTitle:@"title" callback:^(BOOL isSucess) {
         XCTAssertTrue(isSucess, @"修改成功");
         CFRunLoopStop([runLoop getCFRunLoop]);
         run = NO;
     }];
 }
 
+
+//虽然报错，但是可以正确添加源
+-(void)testAddSubscription{
+    [api addSubscriptionsWithAddress:@"ruanyifeng.com/blog/atom.xml" callback:^(BOOL isSucess) {
+        XCTAssertTrue(isSucess, @"添加成功");
+        CFRunLoopStop([runLoop getCFRunLoop]);
+        run = NO;
+    }];
+}
+
+
 -(void)testRemoveSubscriptionFromFolder{
-    [api removeSubscriptionFromFolderWithId:@"feed/53577c10fea0e7b4e5000c0b" folderPath:@"user/-/label/12345" callback:^(BOOL isSuccess) {
+    [api removeSubscriptionFromFolderWithId:@"feed/535dbc7ac70bc25bd60006ea" folderPath:@"user/-/label/12345" callback:^(BOOL isSuccess) {
         XCTAssertTrue(isSuccess, @"修改成功");
         CFRunLoopStop([runLoop getCFRunLoop]);
         run = NO;
     }];
 }
 
+/*   注释的为还没测试
 -(void)testAllitems{
     [api getItmeIdsWithItem:@"user/-/state/com.google/reading-list" getNumber:@"20" callback:^(BOOL isSuccess, NSMutableArray *allImtes){
         XCTAssertTrue(isSuccess, @"获取成功");

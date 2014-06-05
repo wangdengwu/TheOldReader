@@ -15,11 +15,7 @@
 	<key>UpdatingSubscription</key>
 	<string>https://theoldreader.com/reader/api/0/subscription/edit</string>
 	<key>AddSubscription</key>
-	<string>https://theoldreader.com/reader/api/0/subscription/quickadd?
-
- https://theoldreader.com/reader/api/0/subscription/quickadd?quickadd=blog.theoldreader.com
-
-https://theoldreader.com/reader/api/0/subscription/quickadd?</string>
+	<string>https://theoldreader.com/reader/api/0/subscription/quickadd?</string>
 	<key>SubscriptionsOPML</key>
 	<string>https://theoldreader.com/reader/subscriptions/export</string>
 	<key>SubscriptionsList</key>
